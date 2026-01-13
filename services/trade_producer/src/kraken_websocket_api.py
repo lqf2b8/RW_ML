@@ -26,6 +26,9 @@ class KrakenWebSocketAPI:
                 "qty": 1,
                 "timestamp_ms": 163000000000,
             }]
+        from time import sleep
+        sleep(1)
+        
         return event
 
     
@@ -37,4 +40,4 @@ class KrakenWebSocketAPI:
         :return: Description
         :rtype: bool
         """
-        False
+        return False
