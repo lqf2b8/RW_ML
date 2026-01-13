@@ -1,7 +1,9 @@
 from typing import List
+from websocket import create_connection
+from loguru import logger
 
 class KrakenWebSocketAPI:
-    
+    URL = "wss://ws.kraken.com/"
 
 
     """
@@ -11,6 +13,10 @@ class KrakenWebSocketAPI:
     def __init__(self, product_id: str):
         self.product_id = product_id
         # Initialize WebSocket connection here
+        self.ws = create_connection(self.URL)
+        logger.info(f"Connected to Kraken WebSocket API at {self.URL}") 
+
+        self._subscribe(product_id=self.product_id)
 
     def get_trades(self) -> List[dict]:
         """
