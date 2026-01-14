@@ -53,10 +53,10 @@ def produce_trades(
 
 if __name__ == "__main__":
     
-    from src.config import config
+    from src.config import AppConfig
 
     produce_trades(
-        kafka_broker_address=config.kafka_broker_address,
-        kafka_topic=config.kafka_topic,
-        product_id=config.product_id,
+        kafka_broker_address=AppConfig.kafka_broker_address,
+        kafka_topic=AppConfig.kafka_topic,
+        product_id=AppConfig.product_id,
     )
